@@ -1,0 +1,14 @@
+<!-- put this in your HTML in the head section. It will detect if the browser is IE 10 and append a class to the HTML tag of ie10 -->
+
+<!-- in your Css just use:
+
+	.ie10 (regular selectors) {
+	}
+
+-->
+
+<!--[if !IE]><!--><script>  
+if (/*@cc_on!@*/false) {  
+    document.documentElement.className+=' ie10';  
+}  
+</script><!--<![endif]-->  
