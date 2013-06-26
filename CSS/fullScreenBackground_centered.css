@@ -1,0 +1,9 @@
+/* full screen centered background image. Change the image name and directory to suit */
+
+body {
+	background:url(../images/sunset.jpg) 50% 0 no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

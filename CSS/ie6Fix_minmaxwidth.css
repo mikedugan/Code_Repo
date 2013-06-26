@@ -1,0 +1,11 @@
+/*CSS min and max-width fix for IE6. this is just sample sizes. replace the min and max to your needs and replace the
+* 742 and 1202 with the min & max values + 2, respectively. */
+
+#content {
+	height: 75px;
+	background-color: #000;
+	color: #fff;
+	width: expression(document.body.clientWidth < 742? "740px" : document.body.clientWidth > 1202? "1200px" : "auto");
+	min-width: 740px;
+	max-width: 1200px;
+}

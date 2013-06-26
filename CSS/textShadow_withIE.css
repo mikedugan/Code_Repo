@@ -1,0 +1,7 @@
+/* text shadow with IE hack. replace values as needed */
+
+
+.text { 
+   text-shadow: 1px 1px 1px #666; 
+   filter: Shadow(Color=#666666, Direction=135, Strength=5);
+ }

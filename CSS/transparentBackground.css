@@ -1,0 +1,19 @@
+/*transparent background image
+* make sure you change the url and opacity to suit */
+
+.element {
+   position:relative;
+   z-index:1;
+}
+
+.element:before {
+   content:"";
+   position:absolute;
+   z-index:-0;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+   background:url("path-to-image.jpg");
+   opacity:0.5;
+}
