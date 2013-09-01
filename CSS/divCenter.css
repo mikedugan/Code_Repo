@@ -1,9 +1,9 @@
-1 #divID {
-2    width: 400px; /* here you put the width that you need */
-3    height: 200px; /* here you put the height that you need */
-4    position:absolute;
-5    left:50%;
-6    top:50%;
-7    margin-left:-200px; /* this number always to be the width divided two in negative */
-8    margin-top:-100px; /* this number always to be the height divided two in negative */
-9 }
+ #divID {
+    width: 400px; /* here you put the width that you need */
+    height: 200px; /* here you put the height that you need */
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-200px; /* this number always to be the width divided two in negative */
+    margin-top:-100px; /* this number always to be the height divided two in negative */
+ }
