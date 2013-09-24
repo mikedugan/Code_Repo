@@ -1,0 +1,211 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="sunrise"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git password_generator osx brew rand-quote sublime web-search github dircycle brew)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+
+alias ls='ls -lah'
+alias ld='ls -d .*'
+alias ez='exec zsh'
+alias tf="sftp mike@tick"
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+alias h='history'
+alias j='jobs -1'
+alias memhog='ps auxf | sort -nr -k 4 | head -2'
+alias cpuhog='ps auxf | sort -nr -k 3 | head -2'
+alias cl='fc -e - | pbcopy'
+alias cpwd='pwd | tr -d "\n" | pbcopy'
+alias agr='sudo apt-get -purge remove'
+alias size='du -sh'
+alias ff='find ./ -type f -name'
+alias fd='find ./ -type d -name'
+alias fa='fa'
+alias flarger='flarger'
+
+
+alias c='clear'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown -h now'
+alias agu='sudo apt-get update && sudo apt-get upgrade'
+alias agi='agi'
+alias eb="exec bash"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias rsa="ssh sitearra@sitearray.com"
+alias rtap="ssh theairli@theairlineproject.com"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias r='rooter'
+alias sf='sftper'
+alias mkpw='randpw'
+alias eb='exec bash'
+alias t='ssh mike@tick'
+alias ys='yum search'
+alias yi='sudo yum install'
+alias fp='findProcess'
+alias getsrc='getsrc'
+alias mkfake='fakefile'
+fa() {
+  touch faRes
+  find ./ -type f -name $1 >> faRes
+  echo '======directories======' >> faRes
+  find ./ -type d -name $1 >> faRes
+  cat faRes
+  rm faRes
+}
+
+flarger() {
+  find . -type f -size +${1}c
+}
+
+fakefile() {
+  perl -e "print '0' x 1024 x 1024 x $1" > $1-MB-fake-file.txt
+}
+  
+rooter() {
+  ssh root@$1
+}
+
+function rooter() {
+  ssh root@$1
+}
+
+function sftper() {
+  sftp root@$1
+}
+
+
+randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9-\!-\} | head -c${1:-16};echo;}
+
+findProcess() {
+  ps aux | grep $1
+  }
+
+rr() {
+  ssh -t -t mike@10.50.50.30
+  exec "ssh root@$1"
+}
+alias icdev='ssh icdev@hydrogen.internetconnection.net'
+alias ficdev='sftp icdev@hydrogen.internetconnection.net'
+alias carpo='ssh root@carpo.internetconnection.net'
+alias carbon='ssh root@carbon.internetconnection.net'
+alias boron='ssh root@boron.internetconnection.net'
+alias beryllium='ssh root@beryllium.internetconnection.net'
+alias mordor='ssh root@mordor.internetconnection.net'
+alias hydrogen='ssh root@hydrogen.internetconnection.net'
+alias helium='ssh root@helium.internetconnection.net'
+alias nitrogen='ssh root@nitrogen.internetconnection.net'
+alias oxygen='ssh root@oxygen.internetconnection.net'
+alias secho='ssh root@secho.internetconnection.net'
+alias neon='ssh root@neon.internetconnection.net'
+alias oranos='ssh root@oranos.internetconnection.net'
+alias netadmin1='ssh root@netadmin1.internetconnection.net'
+alias netadmin2='ssh root@netadmin2.internetconnection.net'
+alias waffle='ssh root@waffle.internetconnection.net'
+alias fluorine='ssh root@fluorine.internetconnection.net'
+alias harlot='ssh root@harlot.internetconnection.net'
+alias icpbx='ssh root@icpbx.internetconnection.net'
+alias squirtle='ssh root@squirtle.internetconnection.net'
+alias pikachu='ssh root@pikachu.internetconnection.net'
+alias onlyus='ssh root@216.169.153.53'
+alias fonlyus='sftp root@216.169.153.53'
+alias fcarpo='sftp root@carpo.internetconnection.net'
+alias fcarbon='sftp root@carbon.internetconnection.net'
+alias fboron='sftp root@boron.internetconnection.net'
+alias fberyllium='sftp root@beryllium.internetconnection.net'
+alias fmordor='sftp root@mordor.internetconnection.net'
+alias fhydrogen='sftp root@hydrogen.internetconnection.net'
+alias fhelium='sftp root@helium.internetconnection.net'
+alias fnitrogen='sftp root@nitrogen.internetconnection.net'
+alias foxygen='sftp root@oxygen.internetconnection.net'
+alias fsecho='sftp root@secho.internetconnection.net'
+alias fneon='sftp root@neon.internetconnection.net'
+alias foranos='sftp root@oranos.internetconnection.net'
+alias fnetadmin1='sftp root@netadmin1.internetconnection.net'
+alias fnetadmin2='sftp root@netadmin2.internetconnection.net'
+alias fwaffle='sftp root@waffle.internetconnection.net'
+alias ffluorine='sftp root@fluorine.internetconnection.net'
+alias fharlot='sftp root@harlot.internetconnection.net'
+alias ficpbx='sftp root@icpbx.internetconnection.net'
+alias fsquirtle='sftp root@squirtle.internetconnection.net'
+alias fpikachu='sftp root@pikachu.internetconnection.net'
+alias dss="du -sm $1 | awk \'{print \$1}\'"
+alias ds="du -sm $1 | awk '{ print \$1/1000 \"GB\"}'"
+alias ti='ssh mike@10.50.50.30'
+alias swork='ssh -t -t mike@10.50.50.30 exec "ssh mdugan@10.50.50.156"'
+alias fwork='ssh -t -t mike@10.50.50.30 exec "sftp mdugan@10.50.50.156"'
+alias mailsize='du -hs ~/Library/mail'
+alias bk='cd $OLDPWD'
+alias rm='rm -i'
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+
+alias conkeror='/Applications/Firefox.app/Contents/MacOS/firefox -app ~/src/conkeror/application.ini'
+
+export PATH=/usr/local/php5/bin:$PATH
+
+alias amahi='ssh mike@192.168.1.16'
+alias cannon='ssh mike@71.200.121.136'
+alias hfed='ssh -t -t mike@71.200.121.136 exec "ssh mike@192.168.1.116"'
+alias array='ssh root@209.105.235.152'
+alias types="ls * | awk -F. '{ print \$3}' | sort -u | sed '/^$/d' | sed '/^[A-Z]/d' | sed '/[a-z]/!d' | sed '/[a-z]$/!d' | awk 'length(\$0)<5' | awk 'length(\$0)>1'"
+alias rtypes="ls */* | awk -F. '{ print \$3}' | sort -u | sed '/^$/d' | sed '/^[A-Z]/d' | sed '/[a-z]/!d' | sed '/[a-z]$/!d' | awk 'length(\$0)<5' | awk 'length(\$0)>1'"
+
+alias ftypes="find . -type f | awk -F. '{ print \$3}' | sed '/^$/d' | sed '/^[A-Z]/d' | sed '/[a-z]/!d' | sed '/[a-z]$/!d' | awk 'length(\$0)<5' | awk 'length(\$0)>1'"
+
+alias gA='git add -A'
+alias gC='git commit'
+alias gHP='git push https://github.com/mjdugan14/$1'
+alias gP='git push origin master'
+
+ntypes() {
+  ls * | grep $1 | wc -w
+ }
+
+alias ntypes=ntypes
+alias r="ssh root@ $1 .internetconnection.net"

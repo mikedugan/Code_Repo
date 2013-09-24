@@ -1,0 +1,32 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+alias ..="cd ../"
+alias ...="cd ../../"
+
+
+
+function rooter() {
+  ssh root@$1
+}
+
+function sftper() { 
+  sftp root@$1
+}
+
+alias r=rooter
+alias f=sftper
+
+randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9-\!-\} | head -c${1:-16};echo;}
+alias mkpw=randpw
+alias eb="exec bash"
+alias st="ssh mike@tick"
+alias ys="yum search"
+alias yi="sudo yum install"
+alias ts="ssh mike@tick"
+alias tf="sftp mike@tick"
