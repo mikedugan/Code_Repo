@@ -1,0 +1,6 @@
+#dumps a mysql database to a sql file
+mysqldump -p -u username database_name > dbname.sql
+
+#imports a previously dumped sql file
+mysql -p -u username database_name < file.sql
+
