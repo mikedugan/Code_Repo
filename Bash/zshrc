@@ -124,57 +124,13 @@ function sftper() {
 randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9-\!-\} | head -c${1:-16};echo;}
 
 findProcess() {
-  ps aux | grep $1
-  }
+   ps aux | grep $1 | awk '{print $2 ": " $11}'
+   }
 
 rr() {
   ssh -t -t mike@10.50.50.30
   exec "ssh root@$1"
 }
-alias icdev='ssh icdev@hydrogen.internetconnection.net'
-alias ficdev='sftp icdev@hydrogen.internetconnection.net'
-alias carpo='ssh root@carpo.internetconnection.net'
-alias carbon='ssh root@carbon.internetconnection.net'
-alias boron='ssh root@boron.internetconnection.net'
-alias beryllium='ssh root@beryllium.internetconnection.net'
-alias mordor='ssh root@mordor.internetconnection.net'
-alias hydrogen='ssh root@hydrogen.internetconnection.net'
-alias helium='ssh root@helium.internetconnection.net'
-alias nitrogen='ssh root@nitrogen.internetconnection.net'
-alias oxygen='ssh root@oxygen.internetconnection.net'
-alias secho='ssh root@secho.internetconnection.net'
-alias neon='ssh root@neon.internetconnection.net'
-alias oranos='ssh root@oranos.internetconnection.net'
-alias netadmin1='ssh root@netadmin1.internetconnection.net'
-alias netadmin2='ssh root@netadmin2.internetconnection.net'
-alias waffle='ssh root@waffle.internetconnection.net'
-alias fluorine='ssh root@fluorine.internetconnection.net'
-alias harlot='ssh root@harlot.internetconnection.net'
-alias icpbx='ssh root@icpbx.internetconnection.net'
-alias squirtle='ssh root@squirtle.internetconnection.net'
-alias pikachu='ssh root@pikachu.internetconnection.net'
-alias onlyus='ssh root@216.169.153.53'
-alias fonlyus='sftp root@216.169.153.53'
-alias fcarpo='sftp root@carpo.internetconnection.net'
-alias fcarbon='sftp root@carbon.internetconnection.net'
-alias fboron='sftp root@boron.internetconnection.net'
-alias fberyllium='sftp root@beryllium.internetconnection.net'
-alias fmordor='sftp root@mordor.internetconnection.net'
-alias fhydrogen='sftp root@hydrogen.internetconnection.net'
-alias fhelium='sftp root@helium.internetconnection.net'
-alias fnitrogen='sftp root@nitrogen.internetconnection.net'
-alias foxygen='sftp root@oxygen.internetconnection.net'
-alias fsecho='sftp root@secho.internetconnection.net'
-alias fneon='sftp root@neon.internetconnection.net'
-alias foranos='sftp root@oranos.internetconnection.net'
-alias fnetadmin1='sftp root@netadmin1.internetconnection.net'
-alias fnetadmin2='sftp root@netadmin2.internetconnection.net'
-alias fwaffle='sftp root@waffle.internetconnection.net'
-alias ffluorine='sftp root@fluorine.internetconnection.net'
-alias fharlot='sftp root@harlot.internetconnection.net'
-alias ficpbx='sftp root@icpbx.internetconnection.net'
-alias fsquirtle='sftp root@squirtle.internetconnection.net'
-alias fpikachu='sftp root@pikachu.internetconnection.net'
 alias dss="du -sm $1 | awk \'{print \$1}\'"
 alias ds="du -sm $1 | awk '{ print \$1/1000 \"GB\"}'"
 alias ti='ssh mike@10.50.50.30'
@@ -189,9 +145,6 @@ alias conkeror='/Applications/Firefox.app/Contents/MacOS/firefox -app ~/src/conk
 
 export PATH=/usr/local/php5/bin:$PATH
 
-alias amahi='ssh mike@192.168.1.16'
-alias cannon='ssh mike@71.200.121.136'
-alias hfed='ssh -t -t mike@71.200.121.136 exec "ssh mike@192.168.1.116"'
 alias array='ssh root@209.105.235.152'
 alias types="ls * | awk -F. '{ print \$3}' | sort -u | sed '/^$/d' | sed '/^[A-Z]/d' | sed '/[a-z]/!d' | sed '/[a-z]$/!d' | awk 'length(\$0)<5' | awk 'length(\$0)>1'"
 alias rtypes="ls */* | awk -F. '{ print \$3}' | sort -u | sed '/^$/d' | sed '/^[A-Z]/d' | sed '/[a-z]/!d' | sed '/[a-z]$/!d' | awk 'length(\$0)<5' | awk 'length(\$0)>1'"
