@@ -1,0 +1,18 @@
+#adds a network
+/network add -autosendcmd "/^msg bot hi" <name>
+
+
+#adds a server
+/server add -network <name> <url>
+
+#lists your configured networks
+/network list
+
+#lists your configured servers
+/server list
+
+#general command keybinding
+C-a
+
+#follow C-a with these for desired effects
+
