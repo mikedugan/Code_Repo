@@ -397,10 +397,6 @@ In addition, remember that while many versions of sed accept a command
 like "/one/ s/RE1/RE2/", some do NOT allow "/one/! s/RE1/RE2/", which
 contains space before the 's'. Omit the space when typing the command.
 
-OPTIMIZING FOR SPEED: If execution speed needs to be increased (due to
-large input files or slow processors or hard disks), substitution will
-be executed more quickly if the "find" expression is specified before
-giving the "s/.../.../" instruction. Thus:
 
    sed 's/foo/bar/g' filename         # standard replace command
    sed '/foo/ s/foo/bar/g' filename   # executes more quickly
