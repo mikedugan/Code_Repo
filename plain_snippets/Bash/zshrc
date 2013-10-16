@@ -162,3 +162,4 @@ ntypes() {
 
 alias ntypes=ntypes
 alias r="ssh root@ $1 .internetconnection.net"
+alias fc="find ./\$1/ -type f | wc -l"
