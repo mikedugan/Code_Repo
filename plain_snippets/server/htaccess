@@ -1,0 +1,70 @@
+#single page redirects
+Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
+Redirect 301 /oldpage2.html http://www.yoursite.com/folder/
+
+#entire site redirect
+Redirect 301 / http://newsite.com/
+
+#automatically append or prepend files 
+php_value auto_prepend_file "/real/path/to/file/functions.php"
+php_value auto_append_file "/real/path/to/file/footer.php"
+
+#custom error docs
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 405 /405.html
+ErrorDocument 408 /408.html
+ErrorDocument 414 /414.html
+ErrorDocument 500 /500.html
+ErrorDocument 502 /502.html
+ErrorDocument 504 /504.html
+
+#change a directories index page
+DirectoryIndex index2.html
+
+#force downloads for a given filetype
+AddType application/octet-stream .csv
+AddType application/octet-stream .xls
+AddType application/octet-stream .doc
+AddType application/octet-stream .avi
+AddType application/octet-stream .mpg
+AddType application/octet-stream .mov
+AddType application/octet-stream .pdf
+
+#basic directory-based password protection
+AuthType Basic
+AuthName "This Area is Password Protected"
+AuthUserFile /full/path/to/.htpasswd
+Require valid-user
+#next part goes in .htpasswd - get the pw from htaccesstools.com/htpasswd-generator
+mikedugan:$apr1$OHaq/zuE$pY/DlOkPSxPTnxhSXxKzf0
+
+# display no errs to user
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+# log to file
+php_flag log_errors on
+php_value error_log /location/to/php_error.log
+
+#prevents other sites from hotlinking to your images
+RewriteEngine On
+#duplicate the below to allow specific site or search engines etc
+RewriteCond %{HTTP_REFERER} !^http://(.+\.)?yourdomain\.com/ [NC]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteRule .*\.(jpg|gif|bmp|png)$ /images/dontsteal.jpg [L]
+
+#allows you to use PHP in a JavaScript file
+<FilesMatch "^.*?api.*?$">
+SetHandler php5-script
+</FilesMatch>
+#add the following in the first line of the JS
+header("Content-type: application/javascript");
+#now use php tags as needed
+
+#remove the www--make sure you have the cname record in your DNS!
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^your-site.com$ [NC]
+RewriteRule ^(.*)$ http://your-site.com/$1 [L,R=301]
