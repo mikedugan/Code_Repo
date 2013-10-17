@@ -1,0 +1,68 @@
+	
+
+    #############################################################
+    ################### OFFICIAL UBUNTU REPOS ###################
+    #############################################################
+     
+    ###### Ubuntu Main Repos
+deb http://us.archive.ubuntu.com/ubuntu/ raring main restricted universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ raring main restricted universe multiverse
+     
+    ###### Ubuntu Update Repos
+deb http://us.archive.ubuntu.com/ubuntu/ raring-security main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ raring-updates main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ raring-proposed main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ raring-backports main restricted universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ raring-security main restricted universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ raring-updates main restricted universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ raring-proposed main restricted universe multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ raring-backports main restricted universe multiverse
+     
+    ###### Ubuntu Partner Repo
+deb http://archive.canonical.com/ubuntu raring partner
+deb-src http://archive.canonical.com/ubuntu raring partner
+     
+    ###### Ubuntu Extras Repo
+deb http://extras.ubuntu.com/ubuntu raring main
+deb-src http://extras.ubuntu.com/ubuntu raring main
+     
+    ##############################################################
+    ##################### UNOFFICIAL  REPOS ######################
+    ##############################################################
+     
+    ###### 3rd Party Binary Repos
+     
+    ####  Weather Indicator PPA - https://launchpad.net/~weather-indicator-team/+archive/ppa
+    ## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BB91632D
+deb http://ppa.launchpad.net/weather-indicator-team/ppa/ubuntu raring main
+     
+    #### Dropbox - http://dropbox.com
+    ## Run this command: sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+deb http://linux.dropbox.com/ubuntu/ raring main
+     
+    #### Google Chrome Browser - http://www.google.com/linuxrepositories/
+    ## Run this command: wget -q https://dl-ssl.google.com/linux/linux_signing_key.pub -O- | sudo apt-key add -
+deb http://dl.google.com/linux/chrome/deb/ stable main
+     
+    #### Google Earth - http://www.google.com/linuxrepositories/
+    ## Run this command: wget -q https://dl-ssl.google.com/linux/linux_signing_key.pub -O- | sudo apt-key add -
+deb http://dl.google.com/linux/earth/deb/ stable main
+     
+    #### Opera - http://www.opera.com/
+    ## Run this command: sudo wget -O - http://deb.opera.com/archive.key | sudo apt-key add -
+deb http://deb.opera.com/opera/ stable non-free
+     
+    #### Ubuntu Tweak PPA - http://ubuntu-tweak.com/
+    ## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0624A220
+deb http://ppa.launchpad.net/tualatrix/ubuntu raring main
+     
+    #### Xfce 4.10 PPA - https://launchpad.net/~xubuntu-dev/+archive/xfce-4.10
+    ## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 142986CE
+deb http://ppa.launchpad.net/xubuntu-dev/xfce-4.10/ubuntu raring main
+     
+     
+    ####### 3rd Party Source Repos
+     
+    ####  Weather Indicator PPA (Source) - https://launchpad.net/~weather-indicator-team/+archive/ppa
+    ## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BB91632D
+deb-src http://ppa.launchpad.net/weather-indicator-team/ppa/ubuntu raring main
